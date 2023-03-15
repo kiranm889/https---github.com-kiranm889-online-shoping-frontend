@@ -1,0 +1,28 @@
+<h1>LOGIN</h1>
+<!--<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="loginId">Login ID</label>
+    <input
+      type="text"
+      id="loginId"
+      name="loginId"
+      [(ngModel)]="loginId"
+      required
+    />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="password"
+      required
+    />
+  </div>
+  <button type="submit">Login</button>
+</form> -->
+
+<input type="text" [(ngModel)]="loginId" placeholder="Login ID" />
+<input type="password" [(ngModel)]="password" placeholder="Password" />
+<button (click)="login()">Login</button>
