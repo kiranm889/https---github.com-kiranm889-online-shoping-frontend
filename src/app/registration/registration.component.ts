@@ -27,6 +27,8 @@ export class RegistrationComponent {
   emailExists = false;
   loginIdExists = false;
   passwordMismatch = false;
+  errorMessage!: string;
+  invalidCredentials = false;
 
   constructor(private userService: UserService) {}
 
@@ -49,9 +51,19 @@ export class RegistrationComponent {
     //           this.loginIdExists = true;
     //           return;
     //         }
-    this.userService.createUser(this.user).subscribe((response: any) => {
-      // Handle successful registration
-    });
+    this.userService.createUser(this.user).subscribe(
+      (response: any) => {
+        // Handle successful registration
+        console.log(response);
+      },
+      (error) => {
+        // handle login error
+        console.log(error);
+        this.invalidCredentials = true;
+        this.errorMessage = error.error.message;
+        console.error(error);
+      }
+    );
     //     });
     // });
   }

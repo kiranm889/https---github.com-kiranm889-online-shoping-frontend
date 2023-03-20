@@ -12,7 +12,7 @@ export class LoginComponent {
   loginId!: string;
   password!: string;
   errorMessage!: string;
-
+  invalidCredentials = false;
   constructor(
     // private authenticationService: AuthenticationService,
     private loginService: UserService,
@@ -35,9 +35,12 @@ export class LoginComponent {
       (response) => {
         // handle successful login
         console.log(response);
+        this.router.navigate(['/menu']);
       },
       (error) => {
         // handle login error
+        console.log(error);
+        this.invalidCredentials = true;
         console.error(error);
       }
     );
