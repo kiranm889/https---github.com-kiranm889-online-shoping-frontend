@@ -10,9 +10,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MenuComponent } from './menu/menu.component';
 import { NavComponent } from './common/nav/nav.component';
 import { ProductsComponent } from './menu/products/products.component';
+import { ProductsFormComponent } from './menu/products/products-form/products-form.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegistrationComponent, MenuComponent, NavComponent, ProductsComponent],
+  declarations: [AppComponent, LoginComponent, RegistrationComponent, MenuComponent, NavComponent, ProductsComponent, ProductsFormComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

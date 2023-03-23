@@ -60,5 +60,6 @@ export class ProductsComponent {
 
   addTodo() {
     // this.router.navigate(['todos', -1]);
+    this.router.navigate(['/productsForm']);
   }
 }

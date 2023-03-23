@@ -17,4 +17,10 @@ export class ProductsService {
   deleteTodo(username: string, id: number) {
     return this.http.delete(`${this.baseUrl}/${username}/delete/${id}`);
   }
+
+  submitProduct(payload: any) {
+    this.http.post(`${this.baseUrl}/add`, payload).subscribe((response) => {
+      console.log('Product created:', response);
+    });
+  }
 }
