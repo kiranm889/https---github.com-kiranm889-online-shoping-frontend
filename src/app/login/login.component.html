@@ -1,8 +1,8 @@
-<div *ngIf="invalidCredentials" class="alert alert-danger">
+<!-- <div *ngIf="invalidCredentials" class="alert alert-danger">
   Invalid credentials. Please try again.
-</div>
+</div> -->
 
-<form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+<!-- <form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
   <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
   <div class="form-group">
     <label for="inputEmail">Login Id</label>
@@ -40,4 +40,35 @@
   >
     Login
   </button>
-</form>
+</form> -->
+
+<div class="form">
+  <h2>Login Here</h2>
+  <div *ngIf="invalidCredentials" class="alert alert-danger">
+    Invalid credentials. Please try again.
+  </div>
+  <input
+    type="text"
+    [(ngModel)]="loginId"
+    placeholder="Login ID"
+    id="inputLoginId"
+    class="form-control"
+    required
+    name="loginId"
+  />
+  <input
+    type="password"
+    id="inputPassword"
+    class="form-control"
+    placeholder="Password"
+    required
+    [(ngModel)]="password"
+    name="password"
+  />
+  <button class="btnn" (click)="login()"><a href="#">Login</a></button>
+
+  <p class="link">
+    Don't have an account<br />
+    <a routerLink="/register">New user? Register here</a>
+  </p>
+</div>

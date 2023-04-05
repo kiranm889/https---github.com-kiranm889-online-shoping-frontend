@@ -11,9 +11,10 @@ import { MenuComponent } from './menu/menu.component';
 import { NavComponent } from './common/nav/nav.component';
 import { ProductsComponent } from './menu/products/products.component';
 import { ProductsFormComponent } from './menu/products/products-form/products-form.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegistrationComponent, MenuComponent, NavComponent, ProductsComponent, ProductsFormComponent],
+  declarations: [AppComponent, LoginComponent, RegistrationComponent, MenuComponent, NavComponent, ProductsComponent, ProductsFormComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
