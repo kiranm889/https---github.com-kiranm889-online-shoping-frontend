@@ -1,0 +1,19 @@
+.registerForm{
+    width: 100%;
+    height: auto;
+    background-color: #5CDB95;
+    /* background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(../../assets/images/1.jpg); */
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.formSize{
+    width: 400px;
+    margin: auto;
+    padding-top: 30px;
+}
+.formTitle{
+    padding-left: 50px;
+    color:#05386B;
+}

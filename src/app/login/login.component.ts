@@ -35,7 +35,7 @@ export class LoginComponent {
       (response) => {
         // handle successful login
         console.log(response);
-        this.router.navigate(['/menu']);
+        this.router.navigate(['/products']);
       },
       (error) => {
         // handle login error

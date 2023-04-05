@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductsService } from '../service/products.service';
+import { Todo } from './products/products.component';
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
-  constructor(private router: Router) {}
+  todos: Todo[] | undefined;
+
+  constructor(
+    private router: Router,
+    private productservice: ProductsService
+  ) {}
+
   ngOnInit() {
-    this.router.navigate(['/products']);
+    // this.router.navigate(['/products']);
+    this.productservice.retrieveAllTodos().subscribe((response) => {
+      console.log(response);
+      this.todos = response;
+    });
   }
+
   products = [
     {
       name: 'Product 1',
