@@ -21,7 +21,7 @@
 }
 
 .menu{
-    width: 400px;
+    width: 700px;
     float: left;
     height: 70px;
 }
@@ -52,7 +52,7 @@ ul li a:hover{
     color: #05386B;
 }
 
-.search{
+/* .search{
     width: 330px;
     float: left;
     margin-left: 270px;
@@ -104,4 +104,4 @@ ul li a:hover{
 ::placeholder{
     color: #fff;
     font-family: Arial;
-}
+} */

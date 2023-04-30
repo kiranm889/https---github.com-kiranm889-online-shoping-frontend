@@ -11,7 +11,8 @@ export class Todo {
     public features: string,
     public status: string,
     public done: boolean,
-    public targetDate: Date
+    public targetDate: Date,
+    public imageUrl: string
   ) {}
 }
 @Component({

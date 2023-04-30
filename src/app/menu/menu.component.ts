@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '../service/products.service';
 import { Todo } from './products/products.component';
@@ -10,7 +10,9 @@ import { Todo } from './products/products.component';
 })
 export class MenuComponent {
   todos: Todo[] | undefined;
-
+  imageUrl!: 'assets/images/plant1.jpg';
+  searchQuery: string = '';
+  searchResults: Todo[] | undefined;
   constructor(
     private router: Router,
     private productservice: ProductsService
@@ -24,35 +26,15 @@ export class MenuComponent {
     });
   }
 
-  products = [
-    {
-      name: 'Product 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Product 2',
-      description:
-        'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Product 3',
-      description:
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Product 3',
-      description:
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Product 3',
-      description:
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-  ];
+  onSearch(query: string) {
+    if (query.length >= 3) {
+      this.searchResults = this.todos;
+      // Filter searchResults based on query
+      this.searchResults = this.searchResults?.filter((item) => {
+        return item.name.toLowerCase().includes(query.toLowerCase());
+      });
+    } else {
+      this.searchResults = [];
+    }
+  }
 }
