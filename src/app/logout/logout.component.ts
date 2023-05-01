@@ -48,7 +48,6 @@ import { UserService } from '../service/user.service';
   ],
 })
 export class LogoutComponent {
-  // @Input() message: string | undefined;
   message = 'User Logged Out !!!';
   show = true;
 

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
-// import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -13,22 +12,9 @@ export class LoginComponent {
   password!: string;
   errorMessage!: string;
   invalidCredentials = false;
-  constructor(
-    // private authenticationService: AuthenticationService,
-    private loginService: UserService,
-    private router: Router
-  ) {}
+  constructor(private loginService: UserService, private router: Router) {}
 
-  onSubmit() {
-    // this.authenticationService.login(this.loginId, this.password).subscribe(
-    //   () => {
-    //     this.router.navigate(['/']);
-    //   },
-    //   (error: any) => {
-    //     this.errorMessage = error;
-    //   }
-    // );
-  }
+  onSubmit() {}
 
   login() {
     this.loginService.login(this.loginId, this.password).subscribe(

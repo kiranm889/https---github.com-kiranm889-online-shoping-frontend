@@ -11,7 +11,6 @@ export class ProductsService {
 
   retrieveAllTodos() {
     return this.http.get<Todo[]>(`${this.baseUrl}/all`);
-    // console.log('Execute hello world Bean Service');
   }
 
   deleteTodo(username: string, id: number) {

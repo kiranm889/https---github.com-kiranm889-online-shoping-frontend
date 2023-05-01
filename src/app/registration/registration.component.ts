@@ -33,24 +33,6 @@ export class RegistrationComponent {
   constructor(private userService: UserService) {}
 
   onSubmit() {
-    // if (this.user.password !== this.user.confirmPassword) {
-    //   this.passwordMismatch = true;
-    //   return;
-    // }
-    // this.userService
-    //   .checkEmailExists(this.user.email)
-    //   .subscribe((exists: boolean) => {
-    //     if (exists) {
-    //       this.emailExists = true;
-    //       return;
-    //     }
-    //     this.userService
-    //       .checkLoginIdExists(this.user.loginId)
-    //       .subscribe((exists: boolean) => {
-    //         if (exists) {
-    //           this.loginIdExists = true;
-    //           return;
-    //         }
     this.userService.createUser(this.user).subscribe(
       (response: any) => {
         // Handle successful registration
@@ -64,7 +46,5 @@ export class RegistrationComponent {
         console.error(error);
       }
     );
-    //     });
-    // });
   }
 }

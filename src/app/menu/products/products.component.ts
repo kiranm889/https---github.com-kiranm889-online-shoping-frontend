@@ -30,21 +30,11 @@ export class ProductsComponent {
   ) {}
 
   ngOnInit() {
-    // this.todoService.retrieveAllTodos('king').subscribe((response) => {
-    //   console.log(response);
-    //   this.todos = response;
-    // });
     this.productservice.retrieveAllTodos().subscribe((response) => {
       console.log(response);
       this.todos = response;
     });
   }
-
-  // [
-  //   new Todo(1,'learn to dance',false,new Date()),
-  //   new Todo(2,'learn to lead',false,new Date()),
-  //   new Todo(3,'learn to program',true,new Date()),]
-  // {id:1,description:'learn to dance'},{id:2,description:'learn to lead'},{id:3,description:'learn to program'}]
 
   deleteProduct(productName: string, id: number) {
     console.log(`delete Todo ${id}`);
@@ -60,7 +50,6 @@ export class ProductsComponent {
   }
 
   addTodo() {
-    // this.router.navigate(['todos', -1]);
     this.router.navigate(['/productsForm']);
   }
 }

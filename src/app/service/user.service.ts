@@ -24,7 +24,6 @@ export class UserService {
   }
 
   login(loginId: string, password: string) {
-    // const body = { loginId, password };
     const url = `${this.baseUrl}/login?loginId=${loginId}&password=${password}`;
     return this.http.get<any>(url);
   }

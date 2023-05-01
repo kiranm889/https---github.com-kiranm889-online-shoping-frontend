@@ -70,10 +70,8 @@ ul li a:hover{
   
   .search-button {
     width: 60px;
-    /* padding: 10px; */
     background-color: #05386B;
     color: #fff;
-    /* /* font-size: 16px; */
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
