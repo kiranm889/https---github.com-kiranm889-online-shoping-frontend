@@ -36,6 +36,7 @@ export class LoginComponent {
         // handle successful login
         console.log(response);
         this.router.navigate(['/products']);
+        sessionStorage.setItem('authenticatedUser', this.loginId);
       },
       (error) => {
         // handle login error
@@ -44,5 +45,9 @@ export class LoginComponent {
         console.error(error);
       }
     );
+  }
+  email = 'lion@gmail.com';
+  forgotPassword() {
+    this.loginService.changePassword(this.loginId, this.email);
   }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductsFormComponent } from './menu/products/products-form/products-form.component';
 import { ProductsComponent } from './menu/products/products.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'productsForm', component: ProductsFormComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'logout', component: LogoutComponent },
 ];
 
 @NgModule({

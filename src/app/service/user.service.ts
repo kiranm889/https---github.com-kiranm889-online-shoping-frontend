@@ -26,7 +26,19 @@ export class UserService {
   login(loginId: string, password: string) {
     // const body = { loginId, password };
     const url = `${this.baseUrl}/login?loginId=${loginId}&password=${password}`;
-
     return this.http.get<any>(url);
+  }
+
+  logout() {
+    sessionStorage.removeItem('authenticatedUser');
+  }
+
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('authenticatedUser');
+    return !(user == null);
+  }
+
+  changePassword(userId: any, email: any) {
+    return this.http.post(`${this.baseUrl}/forgot-password`, userId, email);
   }
 }

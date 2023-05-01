@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  logout: any;
+  constructor(public userService: UserService) {}
 }

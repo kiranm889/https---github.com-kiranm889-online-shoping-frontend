@@ -7,14 +7,23 @@
     <ul>
       <li><a routerLink="/home">HOME</a></li>
       <li><a routerLink="/about">ABOUT</a></li>
-      <li><a routerLink="/menu">SERVICE</a></li>
-      <li><a href="#">DESIGN</a></li>
-      <li><a href="#">CONTACT</a></li>
+      <li><a routerLink="/menu">SERVICES</a></li>
+      <li>
+        <a
+          *ngIf="!userService.isUserLoggedIn()"
+          routerLink="/home"
+          class="nav-link"
+          >LOGIN</a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="userService.isUserLoggedIn()"
+          routerLink="/logout"
+          class="nav-link"
+          >LOGOUT</a
+        >
+      </li>
     </ul>
   </div>
-
-  <!-- <div class="search">
-    <input class="srch" type="search" name="" placeholder="Type To text" />
-    <a href="#"> <button class="btn">Search</button></a>
-  </div> -->
 </div>
