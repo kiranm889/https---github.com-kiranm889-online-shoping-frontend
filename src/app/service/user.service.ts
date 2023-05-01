@@ -37,6 +37,9 @@ export class UserService {
     let user = sessionStorage.getItem('authenticatedUser');
     return !(user == null);
   }
+  getLoggedInUser() {
+    return sessionStorage.getItem('authenticatedUser');
+  }
 
   changePassword(userId: any, email: any) {
     return this.http.post(`${this.baseUrl}/forgot-password`, userId, email);

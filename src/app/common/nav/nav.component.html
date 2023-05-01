@@ -24,6 +24,30 @@
           >LOGOUT</a
         >
       </li>
+      <li>
+        <a
+          ><button
+            class="search-button"
+            *ngIf="userService.isUserLoggedIn()"
+            (click)="adminCheck()"
+          >
+            ADMIN
+          </button></a
+        >
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div
+          class="logout-container"
+          *ngIf="
+            this.userService.getLoggedInUser() != 'lion123' &&
+            userService.isUserLoggedIn()
+          "
+        >
+          You are not an Admin
+        </div>
+      </li>
     </ul>
   </div>
 </div>

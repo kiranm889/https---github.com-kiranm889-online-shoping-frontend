@@ -10,7 +10,7 @@
         so you can easily bring the beauty of nature into your home.
       </p>
       <button class="cn"><a href="#">JOIN US</a></button>
-      <app-login></app-login>
+      <app-login *ngIf="!userService.isUserLoggedIn()"></app-login>
     </div>
   </div>
 </div>

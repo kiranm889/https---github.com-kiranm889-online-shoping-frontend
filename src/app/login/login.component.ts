@@ -35,7 +35,7 @@ export class LoginComponent {
       (response) => {
         // handle successful login
         console.log(response);
-        this.router.navigate(['/products']);
+        this.router.navigate(['/menu']);
         sessionStorage.setItem('authenticatedUser', this.loginId);
       },
       (error) => {
