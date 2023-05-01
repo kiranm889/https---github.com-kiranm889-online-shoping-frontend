@@ -1,12 +1,6 @@
 <div class="menuProduct">
-  <div class="container">
+  <div class="container" *ngIf="this.userService?.isUserLoggedIn()">
     <h1 class="my-4">Photo Gallery</h1>
-    <!-- <input
-      type="text"
-      class="form-control mb-4"
-      [(ngModel)]="searchText"
-      placeholder="Search"
-    /> -->
     <div class="search-container">
       <input
         type="text"
@@ -66,5 +60,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="logout-container" *ngIf="!this.userService?.isUserLoggedIn()">
+    Please login <a routerLink="/home">here</a> to access this page
   </div>
 </div>

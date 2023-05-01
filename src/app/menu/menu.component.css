@@ -33,4 +33,12 @@
   .search-button:hover {
     background-color: #0056b3;
   }
+
+  .logout-container{
+    background-color: #f8d7da;
+  color: #721c24;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  }
   

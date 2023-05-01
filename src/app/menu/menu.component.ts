@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '../service/products.service';
+import { UserService } from '../service/user.service';
 import { Todo } from './products/products.component';
 
 @Component({
@@ -15,7 +16,8 @@ export class MenuComponent {
   searchResults: Todo[] | undefined;
   constructor(
     private router: Router,
-    private productservice: ProductsService
+    private productservice: ProductsService,
+    public userService: UserService
   ) {}
 
   ngOnInit() {
